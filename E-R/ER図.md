@@ -76,11 +76,6 @@ package "ECサイト" as target_system {
         reg_date
     }
     
-
-    
-
-}
-package "商品マスタFK"　as fk {
     entity "PCカテゴリマスタ" as pc_cate <m_pc_cate> <<M_MASTER_MARK_COLOR>> {
         + pc_cate_id [PK]
         --
@@ -129,6 +124,8 @@ package "商品マスタFK"　as fk {
         name
         price
     }
+    
+
 }
 
 /'
