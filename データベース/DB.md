@@ -39,15 +39,15 @@
 ### 商品テーブル (d_item)
 |和名|属性名|型|PK|NN|FK|
 |:---|:---|:---|:---|:---|:---:|
-|商品コード|item_id|int(11)|〇|〇||
-|価格|price|int(11)||〇||
-|PCタイプ|pc_cate|int(11)||〇||
-|OS|os_id|int(11)||〇||
-|CPU|cpu_id|int(11)||〇||
-|メモリー|memory_id|int(11)||〇||
-|GPU|gup_id|int(11)||〇||
-|SSD|ssd_id|int(11)||〇||
-|HDD|hdd_id|int(11)||〇||
+|商品コード|item_id|int(11)|o|o|o|
+|価格|price|int(11)||o||
+|PCタイプ|pc_cate|int(11)||o||
+|OS|os_id|int(11)||o||
+|CPU|cpu_id|int(11)||o||
+|メモリー|memory_id|int(11)||o||
+|GPU|gup_id|int(11)||o||
+|SSD|ssd_id|int(11)||o||
+|HDD|hdd_id|int(11)||o||
 
 ### PCタイプマスタ　(m_pc_cate)
 |和名|属性名|型|PK|NN|FK|
