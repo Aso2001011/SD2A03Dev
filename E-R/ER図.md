@@ -77,6 +77,58 @@ package "ECサイト" as target_system {
     }
     
 
+    
+
+}
+package "商品マスタFK"　as fk {
+    entity "PCカテゴリマスタ" as pc_cate <m_pc_cate> <<M_MASTER_MARK_COLOR>> {
+        + pc_cate_id [PK]
+        --
+        name
+        price
+    }
+    
+    entity "OSマスタ" as os <m_os> <<M_MASTER_MARK_COLOR>> {
+        + os_id [PK]
+        --
+        name
+        price
+    }
+    
+    entity "CPUマスタ" as cpu <m_cpu> <<M_MASTER_MARK_COLOR>> {
+        + cpu_id [PK]
+        --
+        name
+        price
+    }
+    
+    entity "メモリマスタ" as memory <m_memory> <<M_MASTER_MARK_COLOR>> {
+         + memory_id [PK]
+        --
+        name
+        price
+    }
+    
+     entity "GPUマスタ" as gpu <m_gpu> <<M_MASTER_MARK_COLOR>> {
+       + gpu_id [PK]
+        --
+        name
+        price
+    }
+    
+    entity "SSDマスタ" as ssd <m_ssd> <<M_MASTER_MARK_COLOR>> {
+       + ssd_id [PK]
+        --
+        name
+        price
+    }
+    
+    entity "HDDマスタ" as hdd <m_hdd> <<M_MASTER_MARK_COLOR>> {
+        + hdd_id [PK]
+        --
+        name
+        price
+    }
 }
 
 /'
@@ -106,7 +158,7 @@ items          }o--||     category
 customer       |o-ri-o{     order
 order          ||-ri-|{     order_detail
 order_detail    }-do-||     items
-items          }o-le-||     category
+items          
 
 
 @enduml
