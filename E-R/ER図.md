@@ -156,12 +156,12 @@ customer       |o-ri-o{     order
 order          ||-ri-|{     order_detail
 order_detail    }-do-||     items
 items          ---le-o{     pc_cate
-items          ---do-o{     cpu
-items          ---do-o{     os
-items          ---do-o{     memory
-items          ---do-o{     gpu
-items          ---do-o{     ssd
-items          ---do-o{     hdd
+items          ---le-o{     cpu
+items          ---le-o{     os
+items          ---le-o{     memory
+items          ---le-o{     gpu
+items          ---le-o{     ssd
+items          ---le-o{     hdd
 
 @enduml
 
