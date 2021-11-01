@@ -83,42 +83,42 @@ package "ECサイト" as target_system {
         price
     }
     
-    entity "OSマスタ" as os <m_os> <<M_MASTER_MARK_COLOR>> {
+    entity "OSマスタ" as os <m_os> <<M,MASTER_MARK_COLOR>> {
         + os_id [PK]
         --
         name
         price
     }
     
-    entity "CPUマスタ" as cpu <m_cpu> <<M_MASTER_MARK_COLOR>> {
+    entity "CPUマスタ" as cpu <m_cpu> <<M,MASTER_MARK_COLOR>> {
         + cpu_id [PK]
         --
         name
         price
     }
     
-    entity "メモリマスタ" as memory <m_memory> <<M_MASTER_MARK_COLOR>> {
+    entity "メモリマスタ" as memory <m_memory> <<M,MASTER_MARK_COLOR>> {
          + memory_id [PK]
         --
         name
         price
     }
     
-     entity "GPUマスタ" as gpu <m_gpu> <<M_MASTER_MARK_COLOR>> {
+     entity "GPUマスタ" as gpu <m_gpu> <<M,MASTER_MARK_COLOR>> {
        + gpu_id [PK]
         --
         name
         price
     }
     
-    entity "SSDマスタ" as ssd <m_ssd> <<M_MASTER_MARK_COLOR>> {
+    entity "SSDマスタ" as ssd <m_ssd> <<M,MASTER_MARK_COLOR>> {
        + ssd_id [PK]
         --
         name
         price
     }
     
-    entity "HDDマスタ" as hdd <m_hdd> <<M_MASTER_MARK_COLOR>> {
+    entity "HDDマスタ" as hdd <m_hdd> <<M,MASTER_MARK_COLOR>> {
         + hdd_id [PK]
         --
         name
