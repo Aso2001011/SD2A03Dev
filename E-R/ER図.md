@@ -98,21 +98,21 @@ package "ECサイト" as target_system {
     }
     
     entity "メモリマスタ" as memory <m_memory> <<M,MASTER_MARK_COLOR>> {
-         + memory_id [PK]
+        + memory_id [PK]
         --
         name
         price
     }
     
      entity "GPUマスタ" as gpu <m_gpu> <<M,MASTER_MARK_COLOR>> {
-       + gpu_id [PK]
+        + gpu_id [PK]
         --
         name
         price
     }
     
     entity "SSDマスタ" as ssd <m_ssd> <<M,MASTER_MARK_COLOR>> {
-       + ssd_id [PK]
+        + ssd_id [PK]
         --
         name
         price
