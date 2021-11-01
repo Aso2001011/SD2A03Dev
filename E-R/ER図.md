@@ -156,6 +156,8 @@ customer       |o-ri-o{     order
 order          ||-ri-|{     order_detail
 order_detail    }-do-||     items
 items          ---le-o{     pc_cate
+items          ---do-o{     cpu
+
 
 
 @enduml
