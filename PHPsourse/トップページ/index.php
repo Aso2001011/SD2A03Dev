@@ -36,7 +36,7 @@
 </header>
 <div class="cont">
     <!-- ここからそれぞれのコード -->
-    <h2>あああああああああああああ</h2>
+    <h2>BTOパソコンサイト<i class="fas fa-desktop"></i></h2>
     <div class="mainVisual">
         <ul class="slider">
             <!-- 仮の画像 -->
@@ -127,17 +127,17 @@
                 </div>
             </div>
             <div class="sarch_box">
-                <button type="submit"><span>検索</span></button>
+                <button type="submit">検　索</button>
             </div>
         </div>
         <div class="cate_area">
             <h3>カテゴリから探す</h3>
             <div class="cate_button_area">
-                <button type="button">デスクトップPC</button>
-                <button type="button">ノートPC</button>
-                <button type="button">ゲーミングPC</button>
-                <button type="button">クリエイター向けPC</button>
-                <button type="button">周辺機器</button>
+                <button type="button" class="desk">デスクトップPC</button>
+                <button type="button" class="note">ノートPC</button>
+                <button type="button" class="game">ゲーミングPC</button>
+                <button type="button" class="create">クリエイター向けPC</button>
+                <button type="button" class="peri">周辺機器</button>
             </div>
         </div>
     </div>
@@ -164,38 +164,41 @@
                 <button type="button">商品を見る</button>
             </div>
         </div>
-        <a  class="more_item" href="">もっと見る>>></a>
+        <a  class="more_item" href="">もっと見る　<i class="fas fa-angle-double-right"></i></a>
     </div>
 </div>
 <!-------------------------------------------->
 <footer>
     <div class="foot-wrap">
         <div class="menu-left">
-            <h3>menu-left</h3>
+            <h3>メニュー</h3>
             <ul class="foot-left">
-                <li><a href="#">footer-menu</a></li>
-                <li><a href="#">footer-menu</a></li>
-                <li><a href="#">footer-menu</a></li>
+                <li><a href="#">ログイン</a></li>
+                <li><a href="#">会員情報</a></li>
+                <li><a href="#">お気に入り</a></li>
+                <li><a href="#">カート</a></li>
             </ul>
         </div>
         <div class="menu-center">
-            <h3>menu-center</h3>
+            <h3>カテゴリ</h3>
             <ul class="foot-center">
-                <li><a href="#">footer-menu</a></li>
-                <li><a href="#">footer-menu</a></li>
-                <li><a href="#">footer-menu</a></li>
+                <li><a href="#">デスクトップPC</a></li>
+                <li><a href="#">ノートPC</a></li>
+                <li><a href="#">ゲーミングPC</a></li>
+                <li><a href="#">クリエイター向けPC</a></li>
+                <li><a href="#">周辺機器</a></li>
             </ul>
         </div>
         <div class="menu-right">
-            <h3>menu-right</h3>
+            <h3>サポート</h3>
             <ul class="foot-right">
-                <li><a href="#">footer-menu</a></li>
-                <li><a href="#">footer-menu</a></li>
-                <li><a href="#">footer-menu</a></li>
+                <li><a href="#">新規会員登録</a></li>
+                <li><a href="#">ご利用ガイド</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+                <li><a href="#">サポート</a></li>
             </ul>
         </div>
-        <small class="cmark">©2001システム開発3班
-        </small>
+        <small class="cmark">©2021システム開発3班</small>
     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
