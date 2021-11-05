@@ -1,5 +1,6 @@
 body {
     font-family: "游ゴシック";
+    white-space: nowrap;
 }
 
 header {
@@ -14,10 +15,6 @@ header {
 
 a {
     text-decoration: none;
-}
-
-nav a:hover {
-    font-weight: bold;
 }
 
 h1 {
@@ -91,20 +88,24 @@ h1 a:hover {
     height: 100%;
     border-radius: 5px;
     padding: 5px 10px;
+    transition: 0.2s;
 }
 
 .nav_menu2_item a:hover {
     background-color: white;
     color: #42417A;
-    transition: 0.4s;
 }
 
 .glass {
     width: 500px;
-    height: 40px;
+    height: 35px;
     margin: 0 30px;
     padding: 0;
     position: relative;
+}
+
+.glass i {
+    font-size: 15px;
 }
 
 .glass input {
@@ -139,8 +140,7 @@ h1 a:hover {
 
 .glass button:hover i {
     color: #fa5c67;
-    transform: scale(1.2);
-    transition: 0.2s;
+    transform: scale(1.1);
 }
 
 .glass button:active i {
@@ -154,7 +154,7 @@ h1 a:hover {
 .nav_menu3 {
     margin: 0;
     padding: 10px;
-    height: 35px;
+    height: 45px;
     width: 100%;
     display: flex;
     background-color: #56679c;
@@ -165,16 +165,16 @@ h1 a:hover {
 
 .nav_menu3_item {
     padding: 0 3%;
-    border-right: #ddd 1px solid;
-}
-
-.nav_menu3_item li:last-child {
-    border-right: none;
 }
 
 .nav_menu3_item a {
     color: white;
     font-size: 15px;
+}
+
+.nav_menu3_item a:hover {
+    border-bottom: 1px solid white;
+    transition: 0.3s;
 }
 
 .cont {
@@ -203,15 +203,19 @@ footer {
 }
 
 .foot-wrap {
-    background-color: #dddddd;
+    background-color: #ebebeb;
     color: #56557D;
     text-align: center;
+    position: relative;
+    padding-top: 0;
+    height: 400px;
 }
 
 .foot-wrap .menu-left, .menu-center, .menu-right {
+    margin-top: 30px;
     display: inline-block;
+    vertical-align: top;
     width: 20%;
-    margin: 50px auto;
 }
 
 .foot-wrap ul {
@@ -239,6 +243,9 @@ footer {
     padding: 10px;
     width: 100%;
     margin: 0 auto;
-    background-color: #9d9fa6;
+    background-color: #42417A;
     color: white;
+    position: absolute;
+    bottom: 0;
 }
+
