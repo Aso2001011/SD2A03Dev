@@ -1,0 +1,399 @@
+
+.mainVisual {
+    width: 100%;
+    height: 450px;
+}
+
+/* スライド */
+
+.cont h2 {
+    font-size: 25px;
+    margin: 20px auto;
+}
+
+.slider {
+    width: 80%;
+    margin:0 auto;
+}
+
+.slider ul {
+    margin: 0 auto;
+}
+
+.slider a:hover {
+
+}
+
+.slider img {
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.slider img:hover {
+
+}
+
+.slider .slick-slide {
+    transform: scale(0.6);/*左右の画像のサイズを80%に*/
+    transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+    opacity: 0.5;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+    transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+    opacity: 1;/*透過なし*/
+}
+
+.slick-dotted {
+    padding: 0;
+}
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left: -3%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right: -3%;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+    text-align: center;
+    margin: 40px 0 0 0;
+    padding: 0;
+    position: relative;
+    top: 20px;
+}
+
+.slick-dots li {
+    display: inline-block;
+    margin: 6px;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    border: none;
+    width: 15px;/*ドットボタンのサイズ*/
+    height: 15px;/*ドットボタンのサイズ*/
+    display: block;
+    border-radius: 100px;
+    background: #ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+    background: #333;/*ドットボタンの現在地表示の色*/
+}
+
+/* 真ん中のコンテンツ(始) */
+.middle_area {
+    width: 100%;
+    height: auto;
+    display:flex;
+    justify-content: center;
+}
+
+/* 絞り込み検索エリア */
+.search_area {
+    width: 600px;
+    height: 600px;
+    margin: 10px 25px;
+    padding: 20px;
+    border: 1px solid #9d9fa6;
+}
+
+.search_box {
+    width: 350px;
+    height: auto;
+    text-align: left;
+    margin: 5px auto;
+    font-size: 13px;
+    position: relative;
+}
+
+.search_info {
+    position: relative;
+    width: 350px;
+    margin: 5px auto;
+}
+
+.search_info input[type=text] , select {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 8px 0;
+    padding: 0.3em;
+    transition: 0.3s;
+    border: 1px solid #1b2538;
+    border-radius: 4px;
+    outline: none;
+}
+
+.price {
+    display: flex;
+    width: 350px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.price .search_box , .price .search_info {
+    width: 150px;
+    height: auto;
+}
+
+.line {
+    width: 50px;
+    position: relative;
+    text-align: center;
+}
+
+.line p {
+    position: absolute;
+    bottom: 25px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 3;
+}
+
+.search_info input[type=text]:focus , select:focus {
+    border-color: #fa5c67;
+}
+
+.search_info input[type=text] , select {
+    padding-left: 40px;
+}
+
+.search_info i {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    padding: 9px 8px;
+    transition: 0.3s;
+    color: #aaaaaa;
+}
+
+.search_info input[type=text]:focus + i , select:focus + i {
+    color: #fa5c67;
+}
+
+.search_area button {
+    width: 80px;
+    height: 40px;
+    margin-top: 25px;
+    background-color: #42417A;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    position: absolute;
+    right: 0;
+    transition: 0.2s;
+}
+
+.search_area button:hover {
+    opacity: 0.6;
+}
+
+.search_area button:active {
+    transform: scale(0.9);
+}
+
+/* カテゴリ検索エリア */
+.cate_area {
+    width: 600px;
+    height: 600px;
+    margin: 10px 25px;
+    padding: 20px;
+    border: 1px solid #9d9fa6;
+    text-align: center;
+    position: relative;
+}
+
+.cate_button_area {
+    width: 350px;
+    height: 500px;
+    margin: 50px auto;
+    position: relative;
+    display:flex;
+    flex-flow: column;
+}
+
+.cate_button_area:last-child {
+    margin-bottom: 0;
+}
+
+.cate_area button {
+    width: 300px;
+    height: 55px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: 0.2s;
+    background-color: white;
+    letter-spacing: 3px;
+}
+
+.cate_area button:active {
+    transform: scale(0.9);
+}
+
+.desk {
+    border: 2px solid #f08159;
+    color: #f08159;
+}
+
+.desk:hover {
+    background-color: #f08159;
+    color: white;
+}
+
+.note {
+    border: 2px solid #ffbb6e;
+    color: #ffbb6e;
+}
+
+.note:hover {
+    background-color: #ffbb6e;
+    color: white;
+}
+
+.game {
+    border: 2px solid #ebf569;
+    color: #ebf569;
+}
+
+.game:hover {
+    background-color: #ebf569;
+    color: white;
+}
+
+.create {
+    border: 2px solid #c2f569;
+    color: #c2f569;
+}
+
+.create:hover {
+    background-color: #c2f569;
+    color: white;
+}
+
+.peri {
+    border: 2px solid #93f569;
+    color: #93f569;
+}
+
+.peri:hover {
+    background-color: #93f569;
+    color: white;
+}
+
+/* 真ん中のコンテンツ(終) */
+
+/* 商品エリア */
+
+.item_area {
+    width: 100%;
+    height: 450px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.item_area .more_item {
+    position: absolute;
+    right: 100px;
+    margin-top: 30px;
+}
+
+.item_area_detail {
+    width: 80%;
+    height: 400px;
+    display: flex;
+    margin: 30px auto;
+}
+
+.items {
+    width: 30%;
+    height:auto;
+    background-color: white;
+    margin: 30px;
+    position: relative;
+    text-align: center;
+}
+
+.items h4 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    color: #515275;
+}
+
+.item_pic {
+    width: 100%;
+    height: 60%;
+    margin: 0 auto;
+}
+
+
+.item_pic img {
+    width: auto;
+    height: 100%;
+}
+
+
+.items button {
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 140px;
+    height: 40px;
+    background-color: #2983e3;
+    border: none;
+    border-radius: 100px;
+    color: white;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.items button:hover {
+    opacity: 0.6;
+}
+
+.items button:active {
+    transform: scale(0.9);
+}
+
+.more_item {
+    font-size: 15px;
+    color: #528bd1;
+    transition: 0.2s;
+}
+
+.more_item:hover {
+    font-weight: bold;
+    color: #3e6696;
+}
