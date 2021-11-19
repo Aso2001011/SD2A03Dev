@@ -155,13 +155,13 @@ items          }o--||     category
 customer       |o-ri-o{     order
 order          ||-ri-|{     order_detail
 order_detail    }-do-||     items
-items          ---do-o{     pc_cate
-items          ---do-o{     cpu
-items          ---do-o{     os
-items          ---do-o{     memory
-items          ---do-o{     gpu
-items          ---do-o{     ssd
-items          ---do-o{     hdd
+items          --do-o{     pc_cate
+items          --do-o{     cpu
+items          --do-o{     os
+items          --do-o{     memory
+items          --do-o{     gpu
+items          --do-o{     ssd
+items          --do-o{     hdd
 
 @enduml
 
