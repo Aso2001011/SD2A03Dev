@@ -2,188 +2,205 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>検索結果ページ</title>
-    <link rel="stylesheet" href="css/sanitize.css">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/search.css">
-</head>
-<body>
-<?php require 'header.php'; ?>
-    <!-- ここからそれぞれのコード -->
-<div class="search_area">
-    <div class="search_area_detail">
-        <form action="" method="post">
-            <div class="row row1">
-                <div class="search_box">
-                    キーワード
-                    <div class="search_info">
-                        <input type="text" name="keyword" placeholder="キーワード">
-                        <i class="fas fa-key fa-lg fa-fw" aria-hidden="true"></i>
-                    </div>
-                </div>
-                <div class="price">
-                    <div class="search_box">
-                        金額(下限)
-                        <div class="search_info">
-                            <select name="price">
-                                <option>0円</option>
-                                <option>10,000円</option>
-                                <option>20,000円</option>
-                                <option>30,000円</option>
-                                <option>40,000円</option>
-                            </select>
-                            <i class="fas fa-yen-sign fa-lg fa-fw" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    <div class="line">
-                        <p>～</p>
-                    </div>
-                    <div class="search_box">
-                        金額(上限)
-                        <div class="search_info">
-                            <select name="price">
-                                <option>0円</option>
-                                <option>10,000円</option>
-                                <option>20,000円</option>
-                                <option>30,000円</option>
-                                <option>40,000円</option>
-                            </select>
-                            <i class="fas fa-yen-sign fa-lg fa-fw" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row row2">
-                <div class="search_box">
-                    形状
-                    <div class="search_info">
-                        <select name="type">
-                            <option>指定なし</option>
-                            <option>デスクトップPC</option>
-                            <option>ノートPC</option>
-                        </select>
-                        <i class="fas fa-shapes fa-lg fa-fw" aria-hidden="true"></i>
-                    </div>
-                </div>
-                <div class="search_box">
-                    CPU
-                    <div class="search_info">
-                        <select name="cpu">
-                            <option>指定なし</option>
-                            <option>Core i3</option>
-                            <option>Core i5</option>
-                            <option>Core i7</option>
-                            <option>Core i9</option>
-                        </select>
-                        <i class="fas fa-microchip fa-lg fa-fw" aria-hidden="true"></i>
-                    </div>
-                </div>
-                <div class="search_box">
-                    メモリ
-                    <div class="search_info">
-                        <select name="memory">
-                            <option>指定なし</option>
-                            <option>8GB</option>
-                            <option>16GB</option>
-                            <option>32GB</option>
-                            <option>64GB</option>
-                        </select>
-                        <i class="fas fa-sd-card fa-lg fa-fw" aria-hidden="true"></i>
-                    </div>
-                </div>
-                <div class="search_box search_area_button">
-                    <form action="search.php" method="post">
-                        <button type="submit">再　検　索</button>
-                    </form>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-<div class="hititem_area">
-    <div class="hititem_area_menu">
-        <li><span><?PHP echo '000'; ?></span>件のヒット</li>
-        <li>並び替え：</li>
-        <li class="sort_button"><button type="button">あいうえお順</button></li>
-        <li class="sort_button"><button type="button">価格が低い順</button></li>
-        <li class="sort_button"><button type="button">価格が高い順</button></li>
-        <li class="sort_button"><button type="button">新しい順</button></li>
-        <li class="sort_button"><button type="button">古い順</button></li>
-    </div>
-    <hr>
-    <div class="hititem">
-        <div class="hititem_img">
-            <a href="#"><img src="image/item_01.jpg"></a>
-        </div>
-        <div class="hititem_name">
-            商品名
-        </div>
-        <div class="hititem_desc">
-            <ul>
-                <li>あああああああああああああああああああ</li>
-                <li>いいいいいいいいいいいいいいいいいいい</li>
-                <li>ううううううううううううううううううう</li>
-                <li>えええええええええええええええええええ</li>
-                <li>おおおおおおおおおおおおおおおおおおお</li>
-            </ul>
-        </div>
-        <div class="hititem_price">
-            000,000円(税込)～
-        </div>
-        <div class="hititem_button">
-            <button type="button" class="button_itemdetail">商品詳細へ</button><button type="button" class="button_addcart">カートへ追加</button>
-        </div>
-    </div>
-    <hr>
-    <div class="hititem">
-        <div class="hititem_img">
-            <a href="#"><img src="image/item_02.jpg"></a>
-        </div>
-        <div class="hititem_name">
-            商品名
-        </div>
-        <div class="hititem_desc">
-            <ul>
-                <li>あああああああああああああああああああ</li>
-                <li>いいいいいいいいいいいいいいいいいいい</li>
-                <li>ううううううううううううううううううう</li>
-                <li>えええええええええええええええええええ</li>
-                <li>おおおおおおおおおおおおおおおおおおお</li>
-            </ul>
-        </div>
-        <div class="hititem_price">
-            000,000円(税込)～
-        </div>
-        <div class="hititem_button">
-            <button type="button" class="button_itemdetail">商品詳細へ</button><button type="button" class="button_addcart">カートへ追加</button>
-        </div>
-    </div>
-    <hr>
-    <div class="hititem">
-        <div class="hititem_img">
-            <a href="#"><img src="image/item_03.jpg"></a>
-        </div>
-        <div class="hititem_name">
-            商品名
-        </div>
-        <div class="hititem_desc">
-            <ul>
-                <li>あああああああああああああああああああ</li>
-                <li>いいいいいいいいいいいいいいいいいいい</li>
-                <li>ううううううううううううううううううう</li>
-                <li>えええええええええええええええええええ</li>
-                <li>おおおおおおおおおおおおおおおおおおお</li>
-            </ul>
-        </div>
-        <div class="hititem_price">
-            000,000円(税込)～
-        </div>
-        <div class="hititem_button">
-            <button type="button" class="button_itemdetail">商品詳細へ</button><button type="button" class="button_addcart">カートへ追加</button>
-        </div>
-    </div>
-    <hr>
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/sanitize.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" type="./text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/">
 
-</div>
-<?php require 'footer.php'; ?>
+</head>
+<?php require 'header.php';?>
+    <!-- ここからそれぞれのコード -->
+    <div class="box">
+        <div class="search">
+            <form action="" method="post">
+                キーワード <input type="text" id="keyword" name="keyword">
+                金額上限
+                <select id="money-max" name="price-max">
+                    <option value="0">-</option>
+                    <option value="1000">￥1000</option>
+                    <option value="5000">￥5000</option>
+                    <option value="10000">￥10000</option>
+                    <option value="50000">￥50000</option>
+                    <option value="100000">￥100000</option>
+                    <option value="200000">￥200000</option>
+                    <option value="300000">￥300000</option>
+                </select></br>
+
+                CPU
+                <select id="CPU" name="cpu">
+                    <option value="0">指定なし</option>
+                    <option value="1">core-i5 シリーズ</option>
+                    <option value="2">core-i7 シリーズ</option>
+                    <option value="3">core-i9 シリーズ</option>
+                    <option value="4">Ryzen 5 シリーズ</option>
+                    <option value="5">Ryzen 7 シリーズ</option>
+                    <option value="6">Ryzen 9 シリーズ</option>
+                </select>
+                メモリ
+                <select id="memory" name="memory">
+                    <option value="0">指定なし</option>
+                    <option value="1">8GB</option>
+                    <option value="2">16GB</option>
+                    <option value="3">32GB</option>
+                    <option value="4">64GB</option>
+                </select>
+                グラフィック
+                <select id="grafic" name="gpu">
+                    <option value="0">指定なし</option>
+                    <option value="1">RTX 3080</option>
+                    <option value="2">RTX 3070</option>
+                    <option value="3">RTX 3060</option>
+                    <option value="4">RTX 3060ti</option>
+                </select>
+                <input type="submit" value="検索🔍">
+            </form>
+        </div>
+    </div>
+<?php
+
+require_once 'DBManager.php';
+$pdo = getDB();
+$cnt = 1;
+$que = 'select * from d_item';
+$nameque = 'select name from ';
+$cName = "";
+$mName = "";
+$gName = "";
+$price = (int)$_POST['price-max'];
+$cpu = (int)$_POST['cpu'];
+$memory = (int)$_POST['memory'];
+$gpu = (int)$_POST['gpu'];
+//$exc = "";
+//入力されてるかチェック
+//値段
+//条件　値段の値があるかつ指定されている
+if (isset($price) && $price != 0) {
+    if ($cnt == 1) {
+        $que = $que . " where";
+    }
+    $que = $que . " price <= $price";
+    $cnt++;
+}
+//CPU
+//条件 CPUの値があるかつ指定されている
+if (isset($cpu) && $cpu != 0) {
+    if ($cnt == 1) {
+        $que = $que . " where";
+    } else {
+        $que = $que . " and ";
+    }
+    $que = $que . " cpu_id = $cpu";
+
+    $cnt++;
+}
+//Memory
+//条件　Memoryの値があるかつ指定されている
+if (isset($memory) && $memory != 0) {
+    if ($cnt == 1) {
+        $que = $que . " where";
+    } else {
+        $que = $que . " and ";
+    }
+    $que = $que . " memory_id = $memory";
+
+    $cnt++;
+}
+//GPU
+//条件　GPUの値があるかつ指定されている
+if (isset($gpu) && $gpu != 0) {
+    if ($cnt == 1) {
+        $que = $que . " where";
+    } else {
+        $que = $que . " and ";
+    }
+    $que = $que . " gpu_id = $gpu";
+
+    $cnt++;
+}
+if (isset($cate) && $cate != 0) {
+    if ($cnt == 1) {
+        $que = $que . " where";
+    } else {
+        $que = $que . " and ";
+    }
+    $que = $que . " pc_cate = $cate";
+
+    $cnt++;
+}
+$que = $que . ";";
+echo $que;
+$cnt = 1;
+
+$sql = $pdo->prepare($que);
+$sql->execute();
+$result = $sql->fetchAll();
+echo '<div class="menu">';
+echo '<li>',count($result),'件のヒット</li>';
+?>
+
+    <li>並べ替え</li>
+    <li><input type="button" value="価格が低い順"></li>
+    <li><input type="button" value="価格が高い順"></li>
+    </div>
+    <div class="sql">
+
+        <?php
+        if(isset($result[0])){
+            foreach ($result as $row){
+                $cpu = $row['cpu_id'];
+                $memory = $row['memory_id'];
+                $gpu = $row['gpu_id'];
+                echo '<table>';
+                echo '<td><div class="shouhin"></td>';
+                echo '<td><img src="img/',$row['imgurl'],'" height="346px" width="346px" alt=""></td>';
+                echo '<h2>',$row['item_name'],'</h2>';
+
+                //CPUの名前を取得
+                $cpuque = $nameque."m_cpu where cpu_id = $cpu";
+                $cpuname = $pdo->prepare($cpuque);
+                $cpuname->execute();
+                $result = $cpuname->fetchAll();
+                foreach ($result as $item) {
+                    $cName = $item['name'];
+                }
+                echo $cName,'<br>';
+
+                //Memoryの名前を取得
+                $memque = $nameque."m_memory where memory_id = $memory";
+                $memoryname = $pdo->prepare($memque);
+                $memoryname->execute();
+                $result = $memoryname->fetchAll();
+                foreach ($result as $item) {
+                    $mName = $item['name'];
+                }
+                echo $mName,'<br>';
+
+                //GPUの名前を取得
+                $gpuque = $nameque."m_gpu where gpu_id = $gpu";
+                $gpuname = $pdo->prepare($gpuque);
+                $gpuname->execute();
+                $result = $gpuname->fetchAll();
+                foreach ($result as $item) {
+                    $gName = $item['name'];
+                }
+                echo $gName,'<br>';
+                echo $row['price'],'円（税込）~';
+                echo '<td><input type="button" value="商品詳細へ"></td>';
+                echo '<td><input type="button" value="カートへ追加"></td>';
+                echo '</table>';
+                echo '<hr>';
+            }
+        }else{
+            echo "<h2>該当商品はありません</h2>";
+        }
+
+        $sql=null;
+        ?>
+    </div>
+
+
+
+
+<?php require 'footer.php';?>
