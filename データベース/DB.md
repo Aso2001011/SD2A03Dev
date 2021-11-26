@@ -93,7 +93,7 @@
 |商品名|name|varchar(20)||○||
 |価格|price|int(11)||○||
 
-###カスタマイズテーブル (d_customaize)
+### カスタマイズテーブル (d_customaize)
 |和名|属性名|型|PK|NN|FK|
 |:---|:---|:---|:---|:---|:---:|
 |商品コード|customaize_id|int(11)|o|o||
