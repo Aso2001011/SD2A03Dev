@@ -41,6 +41,8 @@
 |GPU|gup_id|int(11)||o||
 |SSD|ssd_id|int(11)||o||
 |HDD|hdd_id|int(11)||o||
+|登録日|date|int(11)||o||
+|画像|imgurl|varchar(100)||||
 
 ### PCタイプマスタ　(m_pc_cate)
 |和名|属性名|型|PK|NN|FK|
@@ -90,4 +92,19 @@
 |ID|id|int(11)|○|○|o|
 |商品名|name|varchar(20)||○||
 |価格|price|int(11)||○||
+
+###カスタマイズテーブル (d_customaize)
+|和名|属性名|型|PK|NN|FK|
+|:---|:---|:---|:---|:---|:---:|
+|商品コード|customaize_id|int(11)|o|o||
+|登録ユーザー|user_id|int(11)||o|o|
+|価格|price|int(11)||o||
+|PCタイプ|pc_cate|int(11)||o||
+|OS|os_id|int(11)||o||
+|CPU|cpu_id|int(11)||o||
+|メモリー|memory_id|int(11)||o||
+|GPU|gup_id|int(11)||o||
+|SSD|ssd_id|int(11)||o||
+|HDD|hdd_id|int(11)||o||
+|登録日|reg_date|date||o||
 
