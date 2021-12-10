@@ -2,7 +2,7 @@
     <h1><a href="index.php">T　I　T　L　E</a></h1>
     <nav class="menu">
         <ul class="nav_menu1">
-            <li class="nav_menu1_item"><a href="" class="">新規会員登録</a></li>
+            <li class="nav_menu1_item"><a href="newreg.php" class="">新規会員登録</a></li>
             <li class="nav_menu1_item"><a href="" class="">ご利用ガイド</a></li>
             <li class="nav_menu1_item"><a href="" class="">お問い合わせ</a></li>
             <li class="nav_menu1_item"><a href="" class="">サポート</a></li>
@@ -20,11 +20,10 @@
             </li>
         </ul>
         <ul class="nav_menu3">
-            <li class="nav_menu3_item"><a href="category.php" class="">デスクトップPC</a></li>
-            <li class="nav_menu3_item"><a href="category.php" class="">ノートPC</a></li>
-            <li class="nav_menu3_item"><a href="category.php" class="">ゲーミングPC</a></li>
-            <li class="nav_menu3_item"><a href="category.php" class="">クリエイター向けPC</a></li>
-            <li class="nav_menu3_item"><a href="category.php" class="">周辺機器</a></li>
+            <li class="nav_menu3_item"><a href="search.php" class="" onclick="form_1()">デスクトップPC</a></li>
+            <li class="nav_menu3_item"><a href="search.php" class="" onclick="form_2()">ノートPC</a></li>
+            <li class="nav_menu3_item"><a href="search.php" class="" onclick="form_3()">ゲーミングPC</a></li>
+            <li class="nav_menu3_item"><a href="search.php" class="" onclick="form_4()">クリエイター向けPC</a></li>
         </ul>
     </nav>
 </header>
