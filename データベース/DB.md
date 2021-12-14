@@ -1,110 +1,128 @@
 # DBテーブルカラム詳細一覧
 
-### 購入テーブル (d_purchase)
+### カート (d_cart)
 |和名|属性名|型|PK|NN|FK|
 |:---|:---|:---|:---|:---|:---:|
-|オーダーID|order_id|int(20)|○|○||
-|顧客コード|customer_code|varchar(50)||○||
-|購入日|purchase_date|date||○||
-|総額|total_price|int(11)||○||
+|ID   |id  |int(11)|○|○|　                |
+|顧客ID|user|int(11)|　|○|○ m_customers(id)|
+|OSID |OS  |int(11)|　|○|○ m_os(id)       |
+|CPUID|CPU |int(11)|　|○|○ m_cpu(id)      |
+|RAMID|RAM |int(11)|　|○|○ m_ram(id)      |
+|GPUID|GPU |int(11)|　|○|○ m_gpu(id)      |
+|SSDID|SSD |int(11)|　|○|○ m_ssd(id)      |
+|HDDID|HDD |int(11)|　|○|○ m_hdd(id)      |
 
-### 購入詳細テーブル(d_purchase_detail)
+### お気に入り (d_fav)
 |和名|属性名|型|PK|NN|FK|
 |:---|:---|:---|:---|:---|:---:|
-|オーダー詳細ID|detail_id|int(20)|○|○||
-|オーダーID|order_id|int(20)|○|○|○|
-|商品コード|item_code|int(11)||○||
-|商品在庫|item_stock|int(11)||○||
-|価格|price|int(11)||○||
-|数量|num|int(20)||○||
+|ID   |id  |int(11)|○|○|　                |
+|顧客ID|user|int(11)|　|○|○ m_customers(id)|
+|商品ID|item|int(11)|　|○|○ d_item(id)     |
 
-### 顧客マスター(m_customers)
+### 購入 (d_purchase)
 |和名|属性名|型|PK|NN|FK|
 |:---|:---|:---|:---|:---|:---:|
-|顧客コード|customer_code|int(11)|○|○||
-|パスワード|pass|varchar(50)|○|○||
-|氏名|name|varchar(100)||○||
-|電話番号|tel|varchar(20)||○||
-|メール|mail|varchar(100)||○||
-|削除フラグ|del_flag|int(11)||||
-|登録日|reg_date|date||○||
+|オーダーID |order_id     |int(20)|○|○|　                |
+|顧客コード　|customer_code|int(20)|　|○|○ m_customers(id)|
+|購入日　   |purchase_date|date   |　|○|　                |
+|総額      |total_price  |int(20)|　|○|　                |
+
+### 購入詳細 (d_purchase_detail)
+|和名|属性名|型|PK|NN|FK|
+|:---|:---|:---|:---|:---|:---:|
+|オーダー詳細ID|detail_id |int(20)|○|○|　               |
+|オーダーID   |order_id  |int(20)|　|○|○ d_purchase(id)|
+|商品コード　  |item_code |int(11)|　|○|　               |
+|商品在庫     |item_stock|int(11)|　|○|　               |
+|価格        |price     |int(11)|　|○|　               |
+|数量        |num       |int(20)|　|○|　               |
+
+### 顧客 (m_customers)
+|和名|属性名|型|PK|NN|FK|
+|:---|:---|:---|:---|:---|:---:|
+|顧客ID　  |id            |int(11)     |○|○|　|
+|パスワード |password      |varchar(50) |　|○|　|
+|氏名　    |name          |varchar(50) |　|○|　|
+|電話番号　 |tel           |varchar(20) |　|○|　|
+|メール    |mail          |varchar(100)|　|○|　|
+|住所　    |address       |varchar(100)|　|○|　|
+|郵便番号　 |address_number|varchar(7)  |　|○|　|
+|登録日    |reg_date      |date        |　|○|　|
 
 ### 商品テーブル (d_item)
 |和名|属性名|型|PK|NN|FK|
 |:---|:---|:---|:---|:---|:---:|
-|商品コード|item_id|int(11)|o|o|o|
-|価格|price|int(11)||o||
-|PCタイプ|pc_cate|int(11)||o||
-|OS|os_id|int(11)||o||
-|CPU|cpu_id|int(11)||o||
-|メモリー|memory_id|int(11)||o||
-|GPU|gup_id|int(11)||o||
-|SSD|ssd_id|int(11)||o||
-|HDD|hdd_id|int(11)||o||
-|登録日|date|int(11)||o||
-|画像|imgurl|varchar(100)||||
+|商品ID |id      |int(11)     |○|○|　           |
+|商品名　|name    |varchar(50) |　|○|　           |
+|価格   |price   |int(11)     |　|○|　           |
+|タイプ　|Type    |int(11)     |　|○|○ m_type(id)|
+|OS    |OS      |int(11)     |　|○|○ m_os(id)  |
+|CPU   |CPU     |int(11)     |　|○|○ m_cpu(id) |
+|RAM   |RAM     |int(11)     |　|○|○ m_ram(id) |
+|GPU   |GPU     |int(11)     |　|○|○ m_gpu(id) |
+|SSD   |SSD     |int(11)     |　|○|○ m_ssd(id) |
+|HDD   |HDD     |int(11)     |　|○|○ m_hdd(id) |
+|登録日　|reg_date|date        |　|○|　           |
+|画像   |imgurl  |varchar(100)|　|　|　           |
 
-### PCタイプマスタ　(m_pc_cate)
+### タイプ (m_type)
 |和名|属性名|型|PK|NN|FK|
 |:---|:---|:---|:---|:---|:---:|
-|ID|id|int(11)|○|○|o|
-|商品名|name|varchar(20)||○||
-|価格|price|int(11)||○||
+|ID    |id  |int(11)    |○|○|　|
+|タイプ名|name|varchar(50)|　|○|　|
 
-### OSマスタ　(m_os)
+### OS (m_os)
 |和名|属性名|型|PK|NN|FK|
 |:---|:---|:---|:---|:---|:---:|
-|ID|id|int(11)|○|○|o|
-|商品名|name|varchar(20)||○||
-|価格|price|int(11)||○||
+|ID    |id    |int(11)     |○|○|　|
+|商品名　|name  |varchar(50) |　|○|　|
+|価格   |price |int(11)     |　|○|　|
+|画像   |imgurl|varchar(100)|　|○|　|
 
-### CPUマスタ　(m_cpu)
+### CPU (m_cpu)
 |和名|属性名|型|PK|NN|FK|
 |:---|:---|:---|:---|:---|:---:|
-|ID|id|int(11)|○|○|o|
-|商品名|name|varchar(20)||○||
-|価格|price|int(11)||○||
+|ID    |id    |int(11)     |○|○|　|
+|商品名　|name  |varchar(50) |　|○|　|
+|価格   |price |int(11)     |　|○|　|
+|画像   |imgurl|varchar(100)|　|○|　|
 
-### メモリーマスタ　(m_memory)
+### メモリ (m_ram)
 |和名|属性名|型|PK|NN|FK|
 |:---|:---|:---|:---|:---|:---:|
-|ID|id|int(11)|○|○|o|
-|商品名|name|varchar(20)||○||
-|価格|price|int(11)||○||
+|ID    |id    |int(11)     |○|○|　|
+|商品名　|name  |varchar(50) |　|○|　|
+|価格   |price |int(11)     |　|○|　|
+|画像   |imgurl|varchar(100)|　|○|　|
 
-### GPUマスタ　(m_gpu)
+### GPU (m_gpu)
 |和名|属性名|型|PK|NN|FK|
 |:---|:---|:---|:---|:---|:---:|
-|ID|id|int(11)|○|○|o|
-|商品名|name|varchar(20)||○||
-|価格|price|int(11)||○||
+|ID    |id    |int(11)     |○|○|　|
+|商品名　|name  |varchar(50) |　|○|　|
+|価格   |price |int(11)     |　|○|　|
+|画像   |imgurl|varchar(100)|　|○|　|
 
-### SSDマスタ　(m_ssd)
+### SSD (m_ssd)
 |和名|属性名|型|PK|NN|FK|
 |:---|:---|:---|:---|:---|:---:|
-|ID|id|int(11)|○|○|o|
-|商品名|name|varchar(20)||○||
-|価格|price|int(11)||○||
+|ID    |id    |int(11)     |○|○|　|
+|商品名　|name  |varchar(50) |　|○|　|
+|価格   |price |int(11)     |　|○|　|
+|画像   |imgurl|varchar(100)|　|○|　|
 
-### HDDマスタ　(m_hdd)
+### HDD (m_hdd)
 |和名|属性名|型|PK|NN|FK|
 |:---|:---|:---|:---|:---|:---:|
-|ID|id|int(11)|○|○|o|
-|商品名|name|varchar(20)||○||
-|価格|price|int(11)||○||
+|ID    |id    |int(11)     |○|○|　|
+|商品名　|name  |varchar(50) |　|○|　|
+|価格   |price |int(11)     |　|○|　|
+|画像   |imgurl|varchar(100)|　|○|　|
 
-### カスタマイズテーブル (d_customaize)
+### ケース (m_case)
 |和名|属性名|型|PK|NN|FK|
 |:---|:---|:---|:---|:---|:---:|
-|商品コード|customaize_id|int(11)|o|o||
-|登録ユーザー|user_id|int(11)||o|o|
-|価格|price|int(11)||o||
-|PCタイプ|pc_cate|int(11)||o||
-|OS|os_id|int(11)||o||
-|CPU|cpu_id|int(11)||o||
-|メモリー|memory_id|int(11)||o||
-|GPU|gup_id|int(11)||o||
-|SSD|ssd_id|int(11)||o||
-|HDD|hdd_id|int(11)||o||
-|登録日|reg_date|date||o||
-
+|ID    |id    |int(11)     |○|○|　|
+|商品名　|name  |varchar(50) |　|○|　|
+|価格   |price |int(11)     |　|○|　|
+|画像   |imgurl|varchar(100)|　|○|　|
