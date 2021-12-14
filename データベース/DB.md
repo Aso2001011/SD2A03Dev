@@ -3,14 +3,16 @@
 ### カート (d_cart)
 |和名|属性名|型|PK|NN|FK|
 |:---|:---|:---|:---|:---|:---|
-|ID   |id  |int(11)|○|○|          |
-|顧客ID|user|int(11)|　|○|m_user(id)|
-|OSID |OS  |int(11)|　|○|m_os(id)  |
-|CPUID|CPU |int(11)|　|○|m_cpu(id) |
-|RAMID|RAM |int(11)|　|○|m_ram(id) |
-|GPUID|GPU |int(11)|　|○|m_gpu(id) |
-|SSDID|SSD |int(11)|　|○|m_ssd(id) |
-|HDDID|HDD |int(11)|　|○|m_hdd(id) |
+|ID    |id     |int(11)|○|○|          |
+|顧客ID |user   |int(11)|　|○|m_user(id)|
+|商品ID |item   |int(11)|　|○|m_item(id)|
+|OSID  |OS     |int(11)|　|○|m_os(id)  |
+|CPUID |CPU    |int(11)|　|○|m_cpu(id) |
+|RAMID |RAM    |int(11)|　|○|m_ram(id) |
+|GPUID |GPU    |int(11)|　|○|m_gpu(id) |
+|SSDID |SSD    |int(11)|　|○|m_ssd(id) |
+|HDDID |HDD    |int(11)|　|○|m_hdd(id) |
+|注文済　|ordered|boolean|　|　|          |
 
 ### お気に入り (d_fav)
 |和名|属性名|型|PK|NN|FK|
@@ -32,10 +34,7 @@
 |:---|:---|:---|:---|:---|:---|
 |オーダー詳細ID|id   |int(20)|○|○|           |
 |オーダーID   |order|int(20)|　|○|d_order(id)|
-|商品コード　  |item |int(11)|　|○|m_item(id) |
-|商品在庫     |stock|int(11)|　|○|           |
-|価格        |price|int(11)|　|○|           |
-|数量        |num  |int(20)|　|○|           |
+|カートID　   |item |int(11)|　|○|d_cart(id) |
 
 ### 顧客 (m_user)
 |和名|属性名|型|PK|NN|FK|
