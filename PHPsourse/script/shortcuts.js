@@ -259,29 +259,29 @@ function recoverImg() {
  * SQLをJSで生成するのはあまりよろしくない(?)ので、
  * php側に処理を任せる。
 */
-// function getDbResponse(evt,...args) {
-//   let req=new XMLHttpRequest();
-//   req.open('POST','connect-php/getJson.php',true);
-//   req.responseType='json';
-//   req.addEventListener('load',evt);
-//   let form=new FormData();
-//   for(let i=0;i<args.length;i++){
-//     form.append(args[i],args[++i]);
-//   }
-//   req.send(form);
-// }
-// function getDbResponseArray(evt,args) {
-//   let req=new XMLHttpRequest();
-//   req.open('POST','connect-php/getJson.php',true);
-//   req.responseType='json';
-//   req.addEventListener('load',evt);
-//   let form=new FormData();
-//   for(let i=0;i<args.length;i++){
-//     form.append(args[i],args[++i]);
-//   }
-//   req.send(form);
-// }
+function getDbResponse(evt,...args) {
+  let req=new XMLHttpRequest();
+  req.open('POST','connect-php/getJson.php',true);
+  req.responseType='json';
+  req.addEventListener('load',evt);
+  let form=new FormData();
+  for(let i=0;i<args.length;i++){
+    form.append(args[i],args[++i]);
+  }
+  req.send(form);
+}
+function getDbResponseArray(evt,args) {
+  let req=new XMLHttpRequest();
+  req.open('POST','connect-php/getJson.php',true);
+  req.responseType='json';
+  req.addEventListener('load',evt);
+  let form=new FormData();
+  for(let i=0;i<args.length;i++){
+    form.append(args[i],args[++i]);
+  }
+  req.send(form);
+}
 
-// function dispResponse() {
-//   Log(this.response);
-// }
+function dispResponse() {
+  Log(this.response);
+}
