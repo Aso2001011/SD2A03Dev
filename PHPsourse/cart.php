@@ -28,6 +28,7 @@ AND d_cart.GPU = m_gpu.id
 AND d_cart.SSD = m_ssd.id 
 AND d_cart.HDD = m_hdd.id 
 AND d_cart.item = d_item.id 
+AND d_cart.ordered = 0 
 AND d_cart.user = '.$_SESSION['user_id'].';';
 $ary = getDbSql($sql);
 $masterprice=0;
@@ -38,7 +39,7 @@ $masterprice=0;
     <?=count($ary)?>個の商品
   </div>
 </div>
-<div class="item_area" id="item_area"></div>
+<div class="item_area" id="item_area">
 <?php
 if (count($ary) > 0) {
   $itemDrawNum = 0;
@@ -73,7 +74,7 @@ if (count($ary) > 0) {
 <div class="ok">
   <div class="sum">合計<span>',getPriceText($masterprice,false),'(税込)</span></div>
   <div class="ok_button">
-    <button type="button">購入する</button>
+    <button type="button"onclick="location.href=\'order.php\'">購入する</button>
   </div>
 </div>';
 }
@@ -81,4 +82,5 @@ else {
   echo'<hr>カートは空です。';
 }
 ?>
+</div>
 <?php require 'footer.php'?>
