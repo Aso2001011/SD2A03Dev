@@ -12,7 +12,7 @@
 <body>
 <div class="form-wrapper">
     <h1>会員情報</h1>
-    <form action="user-cmp.php" method="post">
+    <form action="info-edit.php" method="post">
         <div class="form-item1">
             <label for="email"></label>
             <input type="email" name="email" required="required" placeholder="メールアドレス"></input>

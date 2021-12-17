@@ -16,14 +16,17 @@ session_start();
 
 <?php require_once "DBManager.php";
 $pdo = getDB();
+unset($_SESSION['user']);
 
-$sql=$pdo->prepare('select * from m_customers where mail=? and password=?');
+$sql=$pdo->prepare('select * from m_user where mail=? and password=?');
 $sql->execute([$_POST['email'],$_POST['password']]);
 foreach ($sql as $row) {
     $_SESSION['user']=[
-            'id'=>$row['customer_code'],'password'=>$row['password'],
+            'password'=>$row['password'],
             'name'=>$row['name'],'tel'=>$row['tel'],
-            'mail'=>$row['mail']];
+            'mail'=>$row['mail'],'address' => $row['address'],
+            'number'=>$row['address_number']];
+    $_SESSION['login']= true;
 }
 if(isset($_SESSION['user'])){
     echo '<p>',$_SESSION['user']['name'],'さん、ようこそ！</p>';

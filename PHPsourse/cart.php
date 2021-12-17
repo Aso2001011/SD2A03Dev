@@ -32,44 +32,44 @@ AND d_cart.user = '.$_SESSION['user_id'].';';
 $ary = getDbSql($sql);
 $masterprice=0;
 ?>
-<div class="title"id="title">
-  <h2>カート</h2>
-  <div class="itemnum"id="itemnum">
-    <?=count($ary)?>個の商品
-  </div>
-</div>
-<div class="item_area" id="item_area"></div>
+    <div class="title"id="title">
+        <h2>カート</h2>
+        <div class="itemnum"id="itemnum">
+            <?=count($ary)?>個の商品
+        </div>
+    </div>
+    <div class="item_area" id="item_area"></div>
 <?php
 if (count($ary) > 0) {
-  $itemDrawNum = 0;
-  foreach($ary as $item) {
-    setItemData(
-      '#',
-      $item['IMG'],
-      $item['Name'],'OS : '.
-      $item['OSName'].'<br> CPU : '.
-      $item['CPUName'].'<br> RAM : '.
-      $item['RAMName'].'<br> GPU : '.
-      $item['GPUName'].'<br> SSD : '.
-      $item['SSDName'].'<br> HDD : '.
-      $item['HDDName'],
-      $item['Price'],
-      true,
-      $item['id'],
-      $item['OS'],
-      $item['CPU'],
-      $item['RAM'],
-      $item['GPU'],
-      $item['SSD'],
-      $item['HDD'],
-      $itemDrawNum,
-      true,
-      $item['cart_id'],
+    $itemDrawNum = 0;
+    foreach($ary as $item) {
+        setItemData(
+            '#',
+            $item['IMG'],
+            $item['Name'],'OS : '.
+            $item['OSName'].'<br> CPU : '.
+            $item['CPUName'].'<br> RAM : '.
+            $item['RAMName'].'<br> GPU : '.
+            $item['GPUName'].'<br> SSD : '.
+            $item['SSDName'].'<br> HDD : '.
+            $item['HDDName'],
+            $item['Price'],
+            true,
+            $item['id'],
+            $item['OS'],
+            $item['CPU'],
+            $item['RAM'],
+            $item['GPU'],
+            $item['SSD'],
+            $item['HDD'],
+            $itemDrawNum,
+            true,
+            $item['cart_id'],
     );
-    $itemDrawNum++;
-    $masterprice+=intval($item['Price']);
-  }
-  echo '
+        $itemDrawNum++;
+        $masterprice+=intval($item['Price']);
+    }
+    echo '
 <div class="ok">
   <div class="sum">合計<span>',getPriceText($masterprice,false),'(税込)</span></div>
   <div class="ok_button">
@@ -78,7 +78,7 @@ if (count($ary) > 0) {
 </div>';
 }
 else {
-  echo'<hr>カートは空です。';
+    echo'<hr>カートは空です。';
 }
 ?>
 <?php require 'footer.php'?>

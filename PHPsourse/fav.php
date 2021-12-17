@@ -30,46 +30,46 @@ AND d_fav.item = d_item.id
 AND d_fav.user = '.$_SESSION['user_id'].';';
 $ary=getDbSql($sql);
 ?>
-<div class="title" id="title">
-  <h2>お気に入り</h2>
-  <div class="itemnum"id="itemnum">
-    <?=count($ary)?>個の商品
-  </div>
-</div>
-<div class="item_area" id="item_area">
-<?php
-if (count($ary) > 0) {
+    <div class="title" id="title">
+        <h2>お気に入り</h2>
+        <div class="itemnum"id="itemnum">
+            <?=count($ary)?>個の商品
+        </div>
+    </div>
+    <div class="item_area" id="item_area">
+        <?php
+        if (count($ary) > 0) {
 
-  $itemDrawNum = 0;
-  foreach($ary as $item) {
-    setItemData(
-      '#',
-      $item['IMG'],
-      $item['Name'],'OS : '.
-      $item['OSName'].'<br> CPU : '.
-      $item['CPUName'].'<br> RAM : '.
-      $item['RAMName'].'<br> GPU : '.
-      $item['GPUName'].'<br> SSD : '.
-      $item['SSDName'].'<br> HDD : '.
-      $item['HDDName'],
-      intval($item['Price']),
-      true,
-      $item['id'],
-      $item['OS'],
-      $item['CPU'],
-      $item['RAM'],
-      $item['GPU'],
-      $item['SSD'],
-      $item['HDD'],
-      $itemDrawNum,
-      false
-    );
-    $itemDrawNum++;
-  }
-}
-else {
-  echo'<hr>お気に入り商品はありません。';
-}
-?>
-</div>
+            $itemDrawNum = 0;
+            foreach($ary as $item) {
+                setItemData(
+                    '#',
+                    $item['IMG'],
+                    $item['Name'],'OS : '.
+                    $item['OSName'].'<br> CPU : '.
+                    $item['CPUName'].'<br> RAM : '.
+                    $item['RAMName'].'<br> GPU : '.
+                    $item['GPUName'].'<br> SSD : '.
+                    $item['SSDName'].'<br> HDD : '.
+                    $item['HDDName'],
+                    intval($item['Price']),
+                    true,
+                    $item['id'],
+                    $item['OS'],
+                    $item['CPU'],
+                    $item['RAM'],
+                    $item['GPU'],
+                    $item['SSD'],
+                    $item['HDD'],
+                    $itemDrawNum,
+                    false
+                );
+                $itemDrawNum++;
+            }
+        }
+        else {
+            echo'<hr>お気に入り商品はありません。';
+        }
+        ?>
+    </div>
 <?php require 'footer.php'?>

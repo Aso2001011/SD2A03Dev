@@ -12,7 +12,7 @@
 <?php require 'header.php'; ?>
 <div class="info_area">
     <h2>新規会員登録</h2>
-    <form action="newreg_send.php" method="post">
+    <form action="new-user-cmp.php" method="post">
         <div class="info_area_detail">
             <div class="info_item">
                 <div class="item">
@@ -26,12 +26,8 @@
             </div>
             <div class="info_item">
                 <div class="item">
-                    <p><span class="req">必須</span> 姓</p>
-                    <input type="text" name="nameA" required>
-                </div>
-                <div class="item">
-                    <p><span class="req">必須</span> 名</p>
-                    <input type="text" name="nameB" required>
+                    <p><span class="req">必須</span> 名前</p>
+                    <input type="text" name="name" required>
                 </div>
             </div>
             <div class="info_item">

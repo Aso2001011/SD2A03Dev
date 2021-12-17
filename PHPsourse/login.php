@@ -1,22 +1,27 @@
 <?php require 'header.php'?>
-<h2>ログイン</h2>
 <?php
 if (!empty($_SESSION['msg'])) {
-  echo '<div class="alert">',$_SESSION['msg'],'</div>';
-  $_SESSION['msg'] = '';
+    echo '<div class="alert">',$_SESSION['msg'],'</div>';
+    $_SESSION['msg'] = '';
 }
 ?>
-<div class="loginfield">
-  <form method="post"action="connect-php/login-connect.php">
-    <div class="box">
-      メールアドレス
-      <input type="text"name="mail"value="sample@gmail.com">
+    <div class="form-wrapper">
+        <h2>LOGIN</h2>
+        <div class="form_login">
+            <form method="post" action="connect-php/login-connect.php">
+                <div class="form-item">
+                    <input type="email" name="mail" required="required" placeholder="メールアドレス">
+                </div>
+                <div class="form-item">
+                    <input type="password" name="password" required="required" placeholder="パスワード">
+                </div>
+                <div class="button-panel">
+                    <input type="submit" class="button" title="ログイン" value="ログイン">
+                </div>
+            </form>
+        </div>
+        <div class="form-footer">
+            <p><a href="newreg.php">会員登録はこちらから</a></p>
+        </div>
     </div>
-    <div class="box">
-      パスワード
-      <input type="text"name="pass"value="password">
-    </div>
-    <button type="submit">ログイン</button>
-  </form>
-</div>
-<?php require 'footer.php'?>
+<?php require 'footer.php'; ?>
