@@ -1,17 +1,42 @@
 <?php
 require 'header.php';
-require 'connect-php/getDBSql.php';
 ?>
 <h2>BTOパソコンサイト<i class="fas fa-desktop"></i></h2>
 <div class="mainVisual"id="mainVisual">
   <div class="arrow_left"id="arrow_left"></div>
   <ul class="slider" id="slider">
-    <li><a href="#"><img src="../image/color_blue.png" alt=""></a></li>
-    <li><a href="#"><img src="../image/color_green.png" alt=""></a></li>
-    <li><a href="#"><img src="../image/color_orange.png" alt=""></a></li>
-    <li><a href="#"><img src="../image/color_black.png" alt=""></a></li>
-    <li><a href="#"><img src="../image/color_red.png" alt=""></a></li>
-    <li><a href="#"><img src="../image/color_yellow.png" alt=""></a></li>
+<?php
+function setSliderItem($item,$os,$cpu,$ram,$gpu,$ssd,$hdd,$img) {
+  echo '
+  <li>
+    <form method="get"action="customize.php">
+      <input type="hidden"name="id"value="',$item,'">
+      <input type="hidden"name="OS"value="',$os,'">
+      <input type="hidden"name="CPU"value="',$cpu,'">
+      <input type="hidden"name="RAM"value="',$ram,'">
+      <input type="hidden"name="GPU"value="',$gpu,'">
+      <input type="hidden"name="SSD"value="',$ssd,'">
+      <input type="hidden"name="HDD"value="',$hdd,'">
+      <input type="image"name="submit"src="',$img,'"id="slider_img_',$item,'">
+    </form>
+  </li>
+  <script id="slider_scr_',$item,'">
+  Evt(Id(\'slider_img_',$item,'\'),\'error\',recoverImg);
+  remChild(Id(\'slider\'),Id(\'slider_scr_',$item,'\'));
+  </script>
+  ';
+}
+$ary=getDbSql('SELECT * FROM d_item ORDER BY RAND() LIMIT 0,6');
+foreach($ary as $d) {
+  setSliderItem($d['id'],$d['OS'],$d['CPU'],$d['RAM'],$d['GPU'],$d['SSD'],$d['HDD'],$d['imgurl']);
+}
+// setSliderItem(1,1,1,1,1,1,1,'../image/color_blue.png');
+// setSliderItem(1,1,1,1,1,1,1,'../image/color_green.png');
+// setSliderItem(1,1,1,1,1,1,1,'../image/color_orange.png');
+// setSliderItem(1,1,1,1,1,1,1,'../image/color_black.png');
+// setSliderItem(1,1,1,1,1,1,1,'../image/color_red.png');
+// setSliderItem(1,1,1,1,1,1,1,'../image/color_yellow.png');
+?>
   </ul>
   <div class="arrow_right"id="arrow_right"></div>
   <div class="slider_point"id="slider_point"></div>
@@ -104,7 +129,7 @@ foreach($ary as$val) {
         <button name="Type"value="3"type="submit"class="note">ノートPC</button>
         <button name="Type"value="1"type="submit"class="game">ゲーミングPC</button>
         <button name="Type"value="4"type="submit"class="create">クリエイター向けPC</button>
-        <button name="Type"value="0"type="submit"class="peri">周辺機器</button>
+        <button name="Type"value="5"type="submit"class="peri">周辺機器</button>
       </form>
     </div>
   </div>
@@ -113,7 +138,45 @@ foreach($ary as$val) {
 <div class="item_area">
   <h2>ケースを選択する</h2>
   <div class="item_area_detail"id="item_area_detail">
+<?php
+$ary=getDbSql('SELECT 
+d_item.id AS ID, 
+m_case.name AS NAME, 
+d_item.OS AS OS, 
+d_item.CPU AS CPU, 
+d_item.RAM AS RAM, 
+d_item.GPU AS GPU, 
+d_item.SSD AS SSD, 
+d_item.HDD AS HDD, 
+m_case.imgurl AS IMG 
+FROM m_case, d_item WHERE m_case.item = d_item.id LIMIT 0,3;');
+$cnt=0;
+foreach($ary as $item) {
+  echo '
+  <div class="items">
+    <h4>',$item['NAME'],'</h4>
+    <div class="item_pic">
+      <a><img id="case_img_',$cnt,'" src="',$item['IMG'],'"></a>
+    </div>
+    <form method="get"action="customize.php">
+      <input name="id"value="',$item['ID'],'"style="display:none">
+      <input name="OS"value="',$item['OS'],'"style="display:none">
+      <input name="CPU"value="',$item['CPU'],'"style="display:none">
+      <input name="RAM"value="',$item['RAM'],'"style="display:none">
+      <input name="GPU"value="',$item['GPU'],'"style="display:none">
+      <input name="SSD"value="',$item['SSD'],'"style="display:none">
+      <input name="HDD"value="',$item['HDD'],'"style="display:none">
+      <button type="submit">カスタマイズ</button>
+    </form>
   </div>
-  <a class="more_item"href="">もっと見る<i class="fas fa-angle-double-right"></i></a>
+  <script id="sc_',$cnt,'">
+  Evt(Id(\'case_img_',$cnt,'\'),\'error\',recoverImg);
+  </script>
+  ';
+  $cnt++;
+}
+?>
+  </div>
+  <a class="more_item"href="case.php">もっと見る<i class="fas fa-angle-double-right"></i></a>
 </div>
 <?php require 'footer.php'?>

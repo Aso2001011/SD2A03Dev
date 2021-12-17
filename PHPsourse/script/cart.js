@@ -64,6 +64,15 @@ function setCartItem() {
     }
   }
 }
+
+/*
+<div class="ok">
+  <div class="sum">合計<span>(税込)</span></div>
+  <div class="ok_button">
+    <button type="button">購入する</button>
+  </div>
+</div>
+*/
 function setOkButton() {
   return add(
     cDiv('class','ok'),
